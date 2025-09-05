@@ -17,8 +17,8 @@ const EXPERIENCES: Experience[] = [
     role: 'Dispatcher',
     company: 'Z & S Transport INC.',
     location: 'El Cajon, CA',
-    start: 'Mar 2025',
-    end: 'Apr 2025',
+    start: 'Mar 2023',
+    end: 'Apr 2024',
     bullets: [
       'Arranged and dispatched 20+ drivers’ daily routes using real-time data and client constraints.',
       'Improved on-time delivery by ~15% via data-driven route adjustments.',
