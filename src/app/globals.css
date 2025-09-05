@@ -1,0 +1,147 @@
+/* Tailwind v4 entry */
+@import "tailwindcss";
+
+/* your custom styles below… */
+body {
+  font-family: 'Noto Sans JP', 'Inter', sans-serif;
+}
+
+/* Optional: accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation-play-state: paused !important; }
+}
+@keyframes brandShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+/* caret blink for code-style brand */
+@keyframes caret {
+  0%,49% { opacity: 1 }
+  50%,100% { opacity: 0 }
+}
+/* Seamless marquee (translate X from 0 to -50%) */
+@keyframes skills-marquee {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-50%,0,0); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-anim { animation: none !important; transform: none !important; }
+}
+@keyframes skills-marquee-3 {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-33.3333%,0,0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skills-marquee-anim { animation: none !important; transform: none !important; }
+}
+
+
+
+
+
+/* aurora sweep */
+@keyframes aurora {
+  0% { transform: translate3d(-10%, -10%, 0) scale(1); }
+  50% { transform: translate3d(10%, 5%, 0) scale(1.05); }
+  100% { transform: translate3d(-10%, -10%, 0) scale(1); }
+}
+
+/* moving border shimmer */
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* scanline drift */
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* contact heading flicker */
+@keyframes flicker {
+  0%, 97%, 100% { opacity: 1 }
+  98% { opacity: .4 }
+  99% { opacity: .85 }
+}
+
+/* marquee you already added earlier stays as-is */
+@keyframes skills-marquee-3 {
+  from { transform: translate3d(0,0,0); }
+  to   { transform: translate3d(-33.3333%,0,0); }
+}
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[aurora_12s_ease_infinite\],
+  .animate-\[borderFlow_8s_linear_infinite\],
+  .animate-\[scan_6s_linear_infinite\],
+  .animate-\[flicker_6s_linear_infinite\] {
+    animation: none !important;
+  }
+}
+
+@keyframes aurora {
+  0% { transform: translate3d(-10%, -10%, 0) scale(1); }
+  50% { transform: translate3d(10%, 5%, 0) scale(1.05); }
+  100% { transform: translate3d(-10%, -10%, 0) scale(1); }
+}
+@keyframes borderFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+@keyframes flicker {
+  0%, 97%, 100% { opacity: 1 }
+  98% { opacity: .4 }
+  99% { opacity: .85 }
+}
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[aurora_12s_ease_infinite\],
+  .animate-\[borderFlow_8s_linear_infinite\],
+  .animate-\[scan_6s_linear_infinite\],
+  .animate-\[flicker_6s_linear_infinite\] { animation: none !important; }
+}
+
+
+:root {
+  /* adjust to your exact gradient if needed */
+  --ombre-start: rgba(56, 189, 248, 0.2);   /* cyan side */
+  --ombre-end:   rgba(244, 114, 182, 0.8);  /* fuchsia side */
+}
+
+
+/* ==== Always-Dark readability overrides ==== */
+@layer base {
+  :root { color-scheme: dark; }
+  html.dark, html.dark body {
+    background: #000;            /* true black base */
+    color: rgb(229 231 235);     /* neutral-200 default text */
+  }
+  h1,h2,h3,h4,strong,b { color: rgb(250 250 250); } /* brighter headings */
+  a { color: rgb(244 244 245); }                    /* links readable by default */
+}
+
+/* Bump contrast for your custom palette tokens when dark is forced */
+@layer utilities {
+  .dark .text-thunder { color: #F7F5F5; }          /* yellow-300 */
+  .dark .border-thunder { border-color: #facc15; }
+
+  .dark .text-moss { color: #F2EDED; }             /* emerald-200 */
+  .dark .border-moss { border-color: #a7f3d0; }
+
+  .dark .text-sage { color: #cbd5e1; }             /* slate-300 */
+  .dark .text-sand { color: #e5e7eb; }             /* zinc-200 */
+  .dark .text-fern { color: #34d399; }             /* emerald-400 */
+
+  /* Common grays that might appear without dark: variants */
+  .dark .text-gray-700 { color: rgb(229 231 235); }
+  .dark .text-gray-800 { color: rgb(241 245 249); }
+  .dark .text-gray-900 { color: rgb(241 245 249); }
+}
